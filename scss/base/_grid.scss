@@ -1,0 +1,183 @@
+@use "sass:math";
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1370px,
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 30px !default;
+
+$gutters: (
+    0: 0,
+    1: 0.25,
+    2: 0.5,
+    3: 1,
+    4: 1.5,
+    5: 3,
+);
+
+%gutter-padding {
+    padding-left: calc(var(--grid-gutter-x) * 0.5);
+    padding-right: calc(var(--grid-gutter-x) * 0.5);
+}
+
+.container-fluid {
+    --grid-gutter-x: #{$grid-gutter-width};
+    --grid-gutter-y: 0;
+
+    width: 100%;
+    margin: 0 auto;
+    @extend %gutter-padding;
+}
+
+.container {
+    @extend .container-fluid;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--grid-gutter-x) * 0.5 * -1);
+    margin-right: calc(var(--grid-gutter-x) * 0.5 * -1);
+    margin-top: calc(var(--grid-gutter-y) * -1);
+
+    &[class*="row-cols-"] > *,
+    [class*="col-"] {
+        flex: 0 0 auto;
+        @extend %gutter-padding;
+    }
+
+    > * {
+        margin-top: var(--grid-gutter-y);
+    }
+}
+
+.col {
+    flex: 1 0 auto;
+    @extend %gutter-padding;
+}
+
+@mixin make-media-query($dimensitions, $byPass: false) {
+    @if $byPass == true {
+        @content;
+    } @else {
+        @media screen and (min-width: $dimensitions) {
+            @content;
+        }
+    }
+}
+
+@mixin make-row-cols($infix) {
+    @for $i from 1 through 6 {
+        @if $infix == "xs" {
+            // CSS vào thẻ con trực tiếp của thằng row-cols
+            .row-cols-#{$i} > * {
+                width: math.div(100%, $i);
+            }
+        } @else {
+            .row-cols-#{$infix}-#{$i} > * {
+                width: math.div(100%, $i);
+            }
+        }
+    }
+}
+
+@mixin make-column($infix) {
+    @for $i from 1 through 12 {
+        @if $infix == "xs" {
+            .col-#{$i} {
+                width: math.div(100%, 12) * $i;
+            }
+        } @else {
+            .col-#{$infix}-#{$i} {
+                width: math.div(100%, 12) * $i;
+            }
+        }
+    }
+}
+
+@mixin make-offset($infix) {
+    @for $i from 0 through 11 {
+        @if $infix == "xs" {
+            .offset-#{$i} {
+                margin-left: math.div(100%, 12) * $i;
+            }
+        } @else {
+            .offset-#{$infix}-#{$i} {
+                margin-left: math.div(100%, 12) * $i;
+            }
+        }
+    }
+}
+
+@mixin make-gutter($infix) {
+    @each $i, $ratio in $gutters {
+        @if $infix == "xs" {
+            .g-#{$i} {
+                --grid-gutter-x: #{$grid-gutter-width * $ratio};
+                --grid-gutter-y: #{$grid-gutter-width * $ratio};
+            }
+        } @else {
+            .g-#{$infix}-#{$i} {
+                --grid-gutter-x: #{$grid-gutter-width * $ratio};
+                --grid-gutter-y: #{$grid-gutter-width * $ratio};
+            }
+        }
+    }
+
+    @each $i, $ratio in $gutters {
+        @if $infix == "xs" {
+            .gx-#{$i} {
+                --grid-gutter-x: #{$grid-gutter-width * $ratio};
+            }
+        } @else {
+            .gx-#{$infix}-#{$i} {
+                --grid-gutter-x: #{$grid-gutter-width * $ratio};
+            }
+        }
+    }
+
+    @each $i, $ratio in $gutters {
+        @if $infix == "xs" {
+            .gy-#{$i} {
+                --grid-gutter-y: #{$grid-gutter-width * $ratio};
+            }
+        } @else {
+            .gy-#{$infix}-#{$i} {
+                --grid-gutter-y: #{$grid-gutter-width * $ratio};
+            }
+        }
+    }
+}
+
+// Tạo media query cho break-points
+@each $infix, $dimensitions in $grid-breakpoints {
+    $max-width: map-get($container-max-widths, $infix);
+
+    @include make-media-query($dimensitions, $infix == "xs") {
+        .container {
+            max-width: $max-width;
+        }
+
+        @include make-row-cols($infix);
+
+        @include make-column($infix);
+
+        @include make-offset($infix);
+
+        @include make-gutter($infix);
+    }
+}
