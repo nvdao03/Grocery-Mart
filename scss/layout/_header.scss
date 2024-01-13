@@ -21,6 +21,8 @@
 .top-bar {
     @extend %flexItemsCenter;
 
+    position: relative;
+
     @include abstract.breakPoints(md) {
         justify-content: space-between;
     }
@@ -48,17 +50,31 @@
 
     &__list {
         @extend %flexItemsCenter;
-
-        gap: 3rem;
     }
 
-    &__link {
+    &__item {
+        &:hover .dropdown {
+            display: block;
+        }
+
+        &:first-child .navbar__link {
+            padding-left: 0px;
+        }
+
+        &:last-child .navbar__link {
+            padding-right: 0px;
+        }
+    }
+
+    &__item &__link {
         @extend %flexItemsCenter;
 
         column-gap: 0.6rem;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.46;
+        height: 5rem;
+        padding: 0 15px;
     }
 
     &__arrow {
