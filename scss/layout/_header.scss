@@ -11,6 +11,7 @@
 
     @include abstract.breakPoints(lg) {
         padding: 2rem 0;
+        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
     }
 
     @include abstract.breakPoints(md) {
@@ -38,10 +39,10 @@
 }
 
 .navbar {
-    margin-left: 14.4rem;
+    margin-left: 12.9rem;
 
     @include abstract.breakPoints(xl) {
-        margin-left: 2rem;
+        margin-left: 0.4rem;
     }
 
     @include abstract.breakPoints(lg) {
@@ -55,14 +56,6 @@
     &__item {
         &:hover .dropdown {
             display: block;
-        }
-
-        &:first-child .navbar__link {
-            padding-left: 0px;
-        }
-
-        &:last-child .navbar__link {
-            padding-right: 0px;
         }
     }
 

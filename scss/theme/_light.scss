@@ -14,8 +14,11 @@ html {
     // Dropdown
     --dropdown-bg-color: #fff;
     --dropsown-shadow-color: rgba(200, 200, 200, 0.4);
+    --topmenu-border-color: #d2d1d6;
 
+    // Nếu nó nằm trong phần layout thì phải tạo ra @mixins như này
     @include abstract.breakPoints(lg) {
         --header-bgr-color: #fff;
+        --header-shadow-color: rgba(237, 237, 246, 0.2);
     }
 }
