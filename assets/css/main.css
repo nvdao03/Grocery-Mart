@@ -1396,10 +1396,12 @@ html.dark {
 }
 
 .top-menu {
+  --main-column-width: 29.2rem;
+  position: relative;
   max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
 }
 .top-menu__main {
-  width: 29.2rem;
+  width: var(--main-column-width);
   overflow-y: auto;
   max-height: inherit;
   border-right: 1px solid var(--topmenu-border-color);
@@ -1408,6 +1410,9 @@ html.dark {
 .menu-column {
   display: flex;
   column-gap: 1.4rem;
+}
+.menu-column + .menu-column {
+  margin-top: 2.3rem;
 }
 .menu-column__icon {
   position: relative;
@@ -1421,13 +1426,13 @@ html.dark {
 .menu-column__icon-1 {
   width: 3rem;
   height: 3rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 .menu-column__icon-2 {
   position: absolute;
   right: 0;
   bottom: 0;
-  object-fit: cover;
+  object-fit: contain;
   width: 2.4rem;
   height: 2.4rem;
   filter: var(--menu-column-icon-color);
@@ -1441,6 +1446,13 @@ html.dark {
 .menu-column__list {
   margin-top: 1.9rem;
 }
+.menu-column__item--active > .sub-menu {
+  display: grid;
+}
+.menu-column__item--active > .menu-column__link, .menu-column__item:hover > .menu-column__link {
+  font-weight: 500;
+  color: #0071dc;
+}
 .menu-column__link {
   display: block;
   font-size: 1.4rem;
@@ -1448,9 +1460,25 @@ html.dark {
   line-height: 1.42;
   padding: 0.7rem 0px;
 }
-.menu-column__link:hover {
-  font-weight: 500;
-  color: #0071dc;
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--main-column-width);
+  overflow-y: auto;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: var(--inner-padding);
+}
+.sub-menu__column .menu-column:last-child .menu-column__content .menu-column__list .menu-column__item:last-child .menu-column__link {
+  padding: 0.7rem 0px 0px;
+}
+.sub-menu--not-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: initial;
+  inset: initial;
+  max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
