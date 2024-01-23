@@ -173,6 +173,22 @@ button {
   filter: var(--icon-color);
 }
 
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-grid {
+  display: grid !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
 .col, .row[class*=row-cols-] > *,
 .row [class*=col-], .container-fluid, .container {
   padding-left: calc(var(--grid-gutter-x) * 0.5);
@@ -1250,8 +1266,7 @@ button {
 }
 html {
   --text-color: #1a162e;
-  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(17%)
-      saturate(2046%) hue-rotate(210deg) brightness(95%) contrast(97%);
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(17%) saturate(2046%) hue-rotate(210deg) brightness(95%) contrast(97%);
   --body-bg: #f6f6f6;
   --header-bgr-color: #eeeeee;
   --top-act-group-bg-color: #fff;
@@ -1260,6 +1275,8 @@ html {
   --dropdown-bg-color: #fff;
   --dropsown-shadow-color: rgba(200, 200, 200, 0.4);
   --topmenu-border-color: #d2d1d6;
+  --sidebar-bg: #fff;
+  --sidebar-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
 }
 @media screen and (max-width: 991.98px) {
   html {
@@ -1270,8 +1287,7 @@ html {
 
 html.dark {
   --text-color: #fff;
-  --icon-color: brightness(0) saturate(100%) invert(95%) sepia(5%)
-      saturate(18%) hue-rotate(162deg) brightness(105%) contrast(105%);
+  --icon-color: brightness(0) saturate(100%) invert(95%) sepia(5%) saturate(18%) hue-rotate(162deg) brightness(105%) contrast(105%);
   --body-bg: #292e39;
   --header-bgr-color: #171c28;
   --top-act-group-bg-color: #292e39;
@@ -1279,11 +1295,11 @@ html.dark {
   --top-act-group-separate: #ededf6;
   --dropdown-bg-color: #292e39;
   --dropsown-shadow-color: rgba(23, 28, 40, 0.4);
-  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(5%)
-      saturate(3210%) hue-rotate(186deg) brightness(87%) contrast(83%);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(5%) saturate(3210%) hue-rotate(186deg) brightness(87%) contrast(83%);
   --topmenu-border-color: #171c28;
-  --menu-column-icon-color: brightness(0) saturate(100%) invert(92%) sepia(1%)
-      saturate(1909%) hue-rotate(201deg) brightness(107%) contrast(97%);
+  --menu-column-icon-color: brightness(0) saturate(100%) invert(92%) sepia(1%) saturate(1909%) hue-rotate(201deg) brightness(107%) contrast(97%);
+  --sidebar-bg: #292e39;
+  --sidebar-shadow: 0px 40px 90px 20px rgba(23, 28, 40, 0.4);
 }
 @media screen and (max-width: 991.98px) {
   html.dark {
@@ -1343,18 +1359,26 @@ html.dark {
   .navbar {
     position: fixed;
     inset: 0 50% 0 0;
-    background: #fff;
+    background: var(--sidebar-bg);
     margin-left: 0px;
     padding: 3.5rem 0 0 3.5rem;
     translate: -100%;
     transition: translate 0.5s;
+    border-radius: 0 2rem 2rem 0;
   }
   .navbar.show {
     translate: 0;
+    box-shadow: var(--sidebar-shadow);
   }
   .navbar.show ~ .navbar--overlay {
     visibility: visible;
     opacity: 1;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .navbar {
+    inset: 0 20% 0 0;
+    padding: 2rem 0 0 2rem;
   }
 }
 .navbar--overlay {
@@ -1377,6 +1401,12 @@ html.dark {
     align-items: flex-start;
     overflow-y: auto;
     max-height: calc(100% - 3rem);
+    overscroll-behavior: contain;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .navbar__list {
+    max-height: calc(100% - 13rem);
   }
 }
 .navbar__item {
@@ -1402,6 +1432,12 @@ html.dark {
   height: 5rem;
   padding: 0 15px;
 }
+@media screen and (max-width: 575.98px) {
+  .navbar .navbar__link {
+    height: 4.4rem;
+    padding-left: 0;
+  }
+}
 .navbar__arrow {
   margin-top: 3px;
 }
@@ -1421,6 +1457,11 @@ html.dark {
   .navbar__close-btn {
     display: block;
     padding-left: 1.5rem;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .navbar__close-btn {
+    padding-left: 0;
   }
 }
 
@@ -1480,6 +1521,29 @@ html.dark {
   width: 100%;
   border-radius: 0.8rem;
   box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+}
+
+.nav-btn {
+  height: 5rem;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+@media screen and (max-width: 575.98px) {
+  .nav-btn {
+    height: 4rem;
+    padding-left: 0;
+  }
+}
+.nav-btn__title, .nav-btn__qnt {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.46;
+}
+.nav-btn__title {
+  margin-left: 1.6rem;
+}
+.nav-btn__qnt {
+  margin-left: auto;
 }
 
 .logo {
@@ -1549,6 +1613,11 @@ html.dark {
   }
   .dropdown__inner::before {
     content: none;
+  }
+}
+@media screen and (max-width: 991.98px) {
+  .dropdown__inner {
+    padding-left: 0;
   }
 }
 

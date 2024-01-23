@@ -50,14 +50,16 @@
         // display: none;
         position: fixed;
         inset: 0 50% 0 0;
-        background: #fff;
+        background: var(--sidebar-bg);
         margin-left: 0px;
         padding: 3.5rem 0 0 3.5rem;
         translate: -100%;
         transition: translate 0.5s;
+        border-radius: 0 2rem 2rem 0;
 
         &.show {
             translate: 0;
+            box-shadow: var(--sidebar-shadow);
         }
 
         // CSS navbar khi có class show cho thẻ anh em đứng sau nó có class navbar--overlay
@@ -65,6 +67,11 @@
             visibility: visible;
             opacity: 1;
         }
+    }
+
+    @include abstract.breakPoints(sm) {
+        inset: 0 20% 0 0;
+        padding: 2rem 0 0 2rem;
     }
 
     &--overlay {
@@ -90,6 +97,11 @@
             align-items: flex-start;
             overflow-y: auto;
             max-height: calc(100% - 3rem);
+            overscroll-behavior: contain;
+        }
+
+        @include abstract.breakPoints(sm) {
+            max-height: calc(100% - 13rem);
         }
     }
 
@@ -121,6 +133,13 @@
         padding: 0 15px;
     }
 
+    .navbar &__link {
+        @include abstract.breakPoints(sm) {
+            height: 4.4rem;
+            padding-left: 0;
+        }
+    }
+
     &__arrow {
         margin-top: 3px;
 
@@ -140,6 +159,10 @@
         @include abstract.breakPoints(lg) {
             display: block;
             padding-left: 1.5rem;
+        }
+
+        @include abstract.breakPoints(sm) {
+            padding-left: 0;
         }
     }
 }
@@ -212,5 +235,31 @@
         width: 100%;
         border-radius: 0.8rem;
         box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.nav-btn {
+    height: 5rem;
+    align-items: center;
+    padding: 0 1.5rem;
+
+    @include abstract.breakPoints(sm) {
+        height: 4rem;
+        padding-left: 0;
+    }
+
+    &__title,
+    &__qnt {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.46;
+    }
+
+    &__title {
+        margin-left: 1.6rem;
+    }
+
+    &__qnt {
+        margin-left: auto;
     }
 }

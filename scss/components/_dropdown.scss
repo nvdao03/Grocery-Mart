@@ -44,6 +44,10 @@
                 content: none;
             }
         }
+
+        @include abstract.breakPoints(lg) {
+            padding-left: 0;
+        }
     }
 }
 
