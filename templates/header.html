@@ -1,7 +1,7 @@
 <div class="container">
     <div class="top-bar">
-        <!-- More -->
-        <button class="top-bar__more">
+        <!-- Tablet, Mobile More -->
+        <button class="top-bar__more js-toggle" toggle-target="#navbar">
             <img src="./assets/icons/more.svg" alt="" class="icon top-bar__more-icon" />
         </button>
 
@@ -12,11 +12,15 @@
         </a>
 
         <!-- Navbar -->
-        <nav class="navbar">
+        <nav id="navbar" class="navbar show">
+            <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+                <img class="" src="./assets/icons/arrow-left.svg" alt="" />
+            </button>
+
             <ul class="navbar__list js-dropdown-list">
                 <!-- Navbar item 1 -->
                 <li class="navbar__item">
-                    <a href="" class="navbar__link">
+                    <a href="#!" class="navbar__link">
                         Departments
                         <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -27,13 +31,13 @@
                                     <!-- Menu column -->
                                     <div class="menu-column">
                                         <!-- Icon -->
-                                        <div class="menu-column__icon">
+                                        <div class="menu-column__icon d-lg-none">
                                             <img src="./assets/imgs/category/cate-1.1.svg" alt="" class="menu-column__icon-1" />
                                             <img src="./assets/imgs/category/cate-1.2.svg" alt="" class="menu-column__icon-2" />
                                         </div>
                                         <!-- Content -->
                                         <div class="menu-column__content">
-                                            <h2 class="menu-column__heading">All Departments</h2>
+                                            <h2 class="menu-column__heading d-lg-none">All Departments</h2>
                                             <ul class="menu-column__list js-menu-list">
                                                 <li class="menu-column__item">
                                                     <a href="#!" class="menu-column__link"> Savings & Featured Shops </a>
@@ -2691,7 +2695,7 @@
                 </li>
                 <!-- Navbar item 2 -->
                 <li class="navbar__item">
-                    <a href="" class="navbar__link">
+                    <a href="#!" class="navbar__link">
                         Grocery
                         <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -2972,7 +2976,7 @@
                 </li>
                 <!-- Navbar item 3 -->
                 <li class="navbar__item">
-                    <a href="" class="navbar__link">
+                    <a href="#!" class="navbar__link">
                         Beauty
                         <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -3204,6 +3208,9 @@
                 </li>
             </ul>
         </nav>
+
+        <!-- Overlay -->
+        <div class="navbar--overlay js-toggle" toggle-target="#navbar"></div>
 
         <!-- Actions -->
         <div class="top-act">

@@ -1,9 +1,16 @@
+@use "../abstract";
+
 .dropdown {
-    // display: none;
+    display: none;
     width: min(124rem, 100%);
     position: absolute;
     left: 0;
     padding-top: 54px;
+
+    @include abstract.breakPoints(lg) {
+        position: initial;
+        padding-top: 0;
+    }
 
     &__inner {
         --inner-max-height: min(58.2rem, 100vh - 15.8rem);
@@ -26,6 +33,17 @@
             translate: -50%;
             filter: var(--dropdown-arrow-color);
         }
+
+        @include abstract.breakPoints(lg) {
+            border-radius: 0;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0 1.7rem;
+
+            &::before {
+                content: none;
+            }
+        }
     }
 }
 
@@ -43,6 +61,12 @@
         overflow-y: auto;
         max-height: inherit;
         border-right: 1px solid var(--topmenu-border-color);
+
+        @include abstract.breakPoints(lg) {
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
     }
 }
 
@@ -92,6 +116,10 @@
 
     &__list {
         margin-top: 1.9rem;
+
+        @include abstract.breakPoints(lg) {
+            margin-top: 0;
+        }
     }
 
     &__item {
@@ -122,8 +150,13 @@
 
     display: none;
     grid-template-columns: repeat(3, 1fr);
-
     padding-left: var(--inner-padding);
+
+    @include abstract.breakPoints(lg) {
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
 
     &__column {
         .menu-column:last-child {
@@ -139,6 +172,12 @@
         }
     }
 
+    &__column {
+        @include abstract.breakPoints(lg) {
+            margin-top: 1rem;
+        }
+    }
+
     &--not-main {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -146,5 +185,10 @@
         inset: initial;
         max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
         padding-left: 0;
+
+        @include abstract.breakPoints(lg) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
     }
 }

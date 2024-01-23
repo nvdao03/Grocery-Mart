@@ -20,6 +20,8 @@ a {
     text-decoration: none;
 }
 
+a,
+div,
 button,
 input,
 select,
@@ -27,6 +29,8 @@ textarea {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
+    // Bỏ hight light khi ấn
+    -webkit-tap-highlight-color: transparent;
 }
 
 button {
