@@ -4,7 +4,7 @@
     position: relative;
     margin-top: 4rem;
 
-    @include abstract.breakPoints(md) {
+    @include abstract.screen(md) {
         margin-top: 3rem;
     }
 
@@ -19,7 +19,7 @@
         padding-top: 34%;
         width: 100%;
 
-        @include abstract.breakPoints(md) {
+        @include abstract.screen(md) {
             padding-top: 50%;
         }
     }
@@ -56,7 +56,7 @@
         line-height: 1.44;
         color: #fff;
 
-        @include abstract.breakPoints(md) {
+        @include abstract.screen(md) {
             font-size: 1.4rem;
             line-height: 1.46;
         }
@@ -81,7 +81,7 @@
             border: 0.4rem solid #fff;
             border-radius: 50%;
 
-            @include abstract.breakPoints(md) {
+            @include abstract.screen(md) {
                 border: 0.3rem solid #fff;
             }
         }

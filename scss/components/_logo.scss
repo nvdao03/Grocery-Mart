@@ -5,7 +5,7 @@
     align-items: center;
     column-gap: 1.4rem;
 
-    @include abstract.breakPoints(lg) {
+    @include abstract.screen(lg) {
         gap: 1rem;
     }
 
@@ -14,14 +14,14 @@
         font-weight: 700;
         line-height: 1.45;
 
-        @include abstract.breakPoints(lg) {
+        @include abstract.screen(lg) {
             font-size: 1.8rem;
             line-height: 1.44;
         }
     }
 
     &__img {
-        @include abstract.breakPoints(lg) {
+        @include abstract.screen(lg) {
             width: 2.4rem;
         }
     }

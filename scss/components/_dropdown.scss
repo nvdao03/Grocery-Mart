@@ -7,7 +7,7 @@
     left: 0;
     padding-top: 54px;
 
-    @include abstract.breakPoints(lg) {
+    @include abstract.screen(lg) {
         position: initial;
         padding-top: 0;
     }
@@ -34,7 +34,7 @@
             filter: var(--dropdown-arrow-color);
         }
 
-        @include abstract.breakPoints(lg) {
+        @include abstract.screen(lg) {
             border-radius: 0;
             background-color: transparent;
             box-shadow: none;
@@ -45,7 +45,7 @@
             }
         }
 
-        @include abstract.breakPoints(lg) {
+        @include abstract.screen(lg) {
             padding-left: 0;
         }
     }
@@ -66,7 +66,7 @@
         max-height: inherit;
         border-right: 1px solid var(--topmenu-border-color);
 
-        @include abstract.breakPoints(lg) {
+        @include abstract.screen(lg) {
             width: 100%;
             height: auto;
             border-right: none;
@@ -121,7 +121,7 @@
     &__list {
         margin-top: 1.9rem;
 
-        @include abstract.breakPoints(lg) {
+        @include abstract.screen(lg) {
             margin-top: 0;
         }
     }
@@ -156,7 +156,7 @@
     grid-template-columns: repeat(3, 1fr);
     padding-left: var(--inner-padding);
 
-    @include abstract.breakPoints(lg) {
+    @include abstract.screen(lg) {
         position: initial;
         grid-template-columns: 1fr;
         padding-left: 0;
@@ -177,7 +177,7 @@
     }
 
     &__column {
-        @include abstract.breakPoints(lg) {
+        @include abstract.screen(lg) {
             margin-top: 1rem;
         }
     }
@@ -190,7 +190,7 @@
         max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
         padding-left: 0;
 
-        @include abstract.breakPoints(lg) {
+        @include abstract.screen(lg) {
             grid-template-columns: 1fr;
             height: auto;
         }

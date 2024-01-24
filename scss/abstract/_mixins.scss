@@ -8,7 +8,7 @@ $grid-breakpoints: (
     xxl: 1400px,
 );
 
-@mixin breakPoints($infix) {
+@mixin screen($infix) {
     $breakPoint: map-get($grid-breakpoints, $infix);
 
     @if ($breakPoint) {
