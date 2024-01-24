@@ -23,6 +23,7 @@
     @extend %flexItemsCenter;
 
     position: relative;
+    z-index: 1;
 
     @include abstract.breakPoints(md) {
         justify-content: space-between;
@@ -118,6 +119,10 @@
             &--active .dropdown {
                 display: block !important;
             }
+        }
+
+        &:hover .dropdown {
+            display: block;
         }
     }
 
