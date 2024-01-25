@@ -24,6 +24,15 @@ html {
     --cate-item-thumb-bg: #fff;
     --cate-item-title-color: #000;
 
+    // Buttons
+    --filter-btn-color: #6c6c72;
+    --filter-btn-bg: #fff;
+    --like-btn-shadow: rgba(124, 124, 124, 0.2);
+
+    // Product
+    --product-card-bg: #fff;
+    --product-card-shadow: rgba(237, 237, 246, 0.2);
+
     // Nếu nó nằm trong phần layout thì phải tạo ra @mixins như này
     @include abstract.screen(lg) {
         --header-bgr-color: #fff;

@@ -167,6 +167,8 @@ button {
   outline: none;
   border: none;
   background-color: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 
 .icon {
@@ -187,6 +189,13 @@ button {
 
 .d-none {
   display: none !important;
+}
+
+@media screen and (max-width: 575.98px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
 
 .row > *, .container-fluid, .container {
@@ -1310,6 +1319,11 @@ html {
   --cate-item-bg: #eee;
   --cate-item-thumb-bg: #fff;
   --cate-item-title-color: #000;
+  --filter-btn-color: #6c6c72;
+  --filter-btn-bg: #fff;
+  --like-btn-shadow: rgba(124, 124, 124, 0.2);
+  --product-card-bg: #fff;
+  --product-card-shadow: rgba(237, 237, 246, 0.2);
 }
 @media screen and (max-width: 991.98px) {
   html {
@@ -1341,6 +1355,11 @@ html.dark {
   --cate-item-bg: #171c28;
   --cate-item-thumb-bg: #292e39;
   --cate-item-title-color: #fff;
+  --filter-btn-color: #fff;
+  --filter-btn-bg: #171c28;
+  --like-btn-shadow: rgba(124, 124, 124, 0.2);
+  --product-card-bg: #171c28;
+  --product-card-shadow: rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 991.98px) {
   html.dark {
@@ -1942,6 +1961,101 @@ html.dark {
   }
 }
 
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  height: 3.6rem;
+  color: var(--filter-btn-color);
+  border-radius: 0.6rem;
+  padding: 0 1.4rem;
+  background: var(--filter-btn-bg);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.like-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  box-shadow: 0px 20px 60px var(--like-btn-shadow);
+}
+.like-btn:not(.like-btn--liked) .like-btn__icon--liked {
+  display: none;
+}
+.like-btn--liked .like-btn__icon {
+  display: none;
+}
+.like-btn__icon--liked {
+  margin-top: 1rem;
+}
+
+.product-card {
+  height: 100%;
+  padding: 1.6rem;
+  border-radius: 2rem;
+  background: var(--product-card-bg);
+  box-shadow: 0px 20px 60px 10px var(--product-card-shadow);
+}
+@media screen and (max-width: 767.98px) {
+  .product-card {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.product-card__img-wrap {
+  position: relative;
+  padding-top: 100%;
+}
+.product-card__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.product-card__like-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.product-card__title {
+  margin-top: 1.6rem;
+}
+.product-card__title, .product-card__price, .product-card__score {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+.product-card__brand {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.46;
+  margin-top: 1.6rem;
+  color: #9e9da8;
+}
+@media screen and (max-width: 767.98px) {
+  .product-card__brand {
+    margin-top: auto;
+  }
+}
+.product-card__row {
+  display: flex;
+  align-items: center;
+  margin-top: 1.6rem;
+}
+.product-card__star {
+  margin-left: auto;
+}
+.product-card__score {
+  margin-left: 0.6rem;
+}
+
 .home__container {
   margin-top: 4rem;
 }
@@ -1968,6 +2082,11 @@ html.dark {
   .home__cate {
     --grid-gutter-y: 2rem;
   }
+}
+.home__row {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=main.css.map */
