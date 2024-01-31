@@ -1327,6 +1327,7 @@ html {
   --product-card-shadow: rgba(237, 237, 246, 0.2);
   --filter-form-bg: #fff;
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
+  --filter-form-tag-bg: #f8f8fb;
 }
 @media screen and (max-width: 991.98px) {
   html {
@@ -2131,9 +2132,53 @@ html.dark {
 .filter__form-slider::after {
   left: var(--max-value);
 }
+.filter__form-select-wrap {
+  display: flex;
+  align-items: center;
+  height: 4.5rem;
+  border-radius: 0.6rem;
+  border: 1px solid #d2d1d6;
+}
+.filter__form-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: var(--width, 10.8rem);
+  height: calc(100% - 1rem);
+  padding: 0 1.4rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.42;
+}
+.filter__form-select + .filter__form-select {
+  border-left: 1px solid #d2d1d6;
+}
+.filter__form-tags {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+}
+.filter__form-tag {
+  color: #9e9da8;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  line-height: 1.42;
+  background: var(--filter-form-tag-bg);
+  transition: color 0.2s;
+}
+.filter__form-tag:hover {
+  color: var(--text-color);
+}
 .filter__row {
   display: flex;
-  flex: 1;
+}
+.filter__separate {
+  width: 0.1rem;
+  background: #eee;
+  margin: 0 3rem;
 }
 
 .home__container {
