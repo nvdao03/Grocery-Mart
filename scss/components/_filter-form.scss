@@ -35,9 +35,39 @@
             }
         }
 
+        &-text-input {
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+
+            width: 33.4rem;
+            height: 4.4rem;
+            padding: 0 1.6rem;
+
+            border-radius: 0.6rem;
+            border: 1px solid #d2d1d6;
+        }
+
         &-input {
+            width: 100%;
+
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.46;
+
+            &::placeholder {
+                color: #9e9da8;
+                font-size: 1.5rem;
+                font-weight: 400;
+                line-height: 1.46;
+            }
+        }
+
+        &-text-input--small {
             width: 12.1rem;
             height: 3.6rem;
+
             padding: 0 1.2rem;
 
             font-size: 1.4rem;
@@ -46,6 +76,10 @@
 
             border-radius: 0.6rem;
             border: 1px solid #d2d1d6;
+        }
+
+        &-input-icon {
+            margin-left: 1.2rem;
         }
 
         &-group {
