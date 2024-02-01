@@ -1,0 +1,135 @@
+@use "../abstract";
+
+.footer {
+    padding: 6rem 0;
+    background-color: var(--product-card-bg);
+    margin-top: 5rem;
+
+    &__inner {
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+        gap: 5rem;
+
+        @include abstract.screen(lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__desc {
+        margin-top: 3rem;
+        font-size: 1.5rem;
+        line-height: 1.4;
+
+        @include abstract.screen(lg) {
+            width: min(40rem, 100%);
+        }
+    }
+
+    &__help-text {
+        font-size: 1.4rem;
+        margin-top: 4rem;
+        line-height: 1.4;
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 1.8rem;
+    }
+
+    &__list {
+        margin-top: 2rem;
+    }
+
+    &__link,
+    &__text {
+        padding: 0.8rem 0;
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+
+    &__text {
+        @include abstract.screen(lg) {
+            width: min(40rem, 100%);
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 0.8rem 0;
+        font-size: 1.4rem;
+
+        &:hover {
+            color: #0071dc;
+            text-decoration: underline;
+        }
+    }
+
+    &__text {
+        color: #9e9da8;
+    }
+
+    &__label {
+        margin-top: 2rem;
+        font-weight: 500;
+    }
+
+    &__form {
+        display: flex;
+        gap: 1rem;
+        padding: 1.6rem 0;
+
+        @include abstract.screen(xl) {
+            flex-direction: column;
+        }
+
+        @include abstract.screen(lg) {
+            flex-direction: row;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.6rem;
+        border: 1px solid #d2d1d6;
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        &::placeholder {
+            font-weight: 400;
+        }
+
+        @include abstract.screen(lg) {
+            width: 40%;
+        }
+
+        @include abstract.screen(md) {
+            width: 50%;
+        }
+
+        @include abstract.screen(sm) {
+            flex: 1;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__bottom {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include abstract.screen(md) {
+            flex-direction: column;
+        }
+    }
+
+    &__copyright {
+        font-size: 1.4rem;
+        color: var(--footer-text-color);
+    }
+}
