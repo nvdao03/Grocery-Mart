@@ -45,6 +45,10 @@
 // Buttons
 // Thiết kế hết 1 loạt button
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     height: 4.6rem;
 
     padding: 0 2rem;
@@ -61,7 +65,9 @@
     }
 
     + .btn {
-        margin-left: 2rem;
+        &:not(.btn--no-magin) {
+            margin-left: 2rem;
+        }
     }
 
     &--text {

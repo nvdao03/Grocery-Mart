@@ -5,9 +5,6 @@
     background-color: var(--product-card-bg);
     margin-top: 5rem;
 
-    &__inner {
-    }
-
     &__row {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;

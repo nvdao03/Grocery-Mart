@@ -1,0 +1,59 @@
+.form {
+    &__group {
+        margin-top: 3rem;
+
+        &--inline {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__text-input {
+        display: flex;
+        align-items: center;
+
+        height: 5rem;
+
+        padding: 0 1.2rem;
+        border-radius: 1rem;
+        border: 1px solid #d2d1d6;
+
+        &:focus-within {
+            border-color: #77dae6;
+        }
+    }
+
+    &__input {
+        flex: 1;
+        height: 100%;
+
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.6rem;
+
+        &::placeholder {
+            color: #d2d1d6;
+        }
+
+        &-icon {
+            margin-left: 1.2rem;
+        }
+    }
+
+    &__pull-right {
+        margin-left: auto;
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &-lable {
+            color: #9e9da8;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 2.2rem;
+        }
+    }
+}

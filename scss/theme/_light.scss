@@ -40,6 +40,10 @@ html {
     --filter-form-shadow: rgba(200, 200, 200, 0.4);
     --filter-form-tag-bg: #f8f8fb;
 
+    // auth
+    --auth-content-bg: #fff;
+    --auth-desc-color: #9e9da8;
+
     // Nếu nó nằm trong phần layout thì phải tạo ra @mixins như này
     @include abstract.screen(lg) {
         --header-bgr-color: #fff;
