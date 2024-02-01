@@ -46,6 +46,10 @@ button {
     cursor: pointer;
 }
 
+input {
+    background-color: transparent;
+}
+
 .icon {
     filter: var(--icon-color);
 }

@@ -1,3 +1,5 @@
+@use "../abstract";
+
 .filter-wrap {
     position: relative;
     z-index: 1;
@@ -5,14 +7,33 @@
 
 .filter {
     position: absolute;
-    top: 5rem;
+    top: 5.3rem;
     right: 0;
 
-    padding: 3rem;
+    padding: 3rem 0;
     border-radius: 2rem;
 
     background: var(--filter-form-bg);
     filter: drop-shadow(0px 40px 90px var(--filter-form-shadow));
+
+    transition-property: opacity, visibility;
+    transition-duration: 0.4s;
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__arrow {
+        position: absolute;
+
+        // Lấy chiều cao hiện tại / số 'x' mà ta phóng lớn
+        height: 2.2rem;
+        top: -1rem;
+        right: 4rem;
+
+        filter: var(--filter-form-arrow-color);
+    }
 
     &__heading {
         font-size: 2.2rem;
@@ -47,6 +68,10 @@
 
             border-radius: 0.6rem;
             border: 1px solid #d2d1d6;
+
+            @include abstract.screen(sm) {
+                width: 100%;
+            }
         }
 
         &-input {
@@ -62,6 +87,10 @@
                 font-weight: 400;
                 line-height: 1.46;
             }
+
+            @include abstract.screen(sm) {
+                font-size: 1.6rem;
+            }
         }
 
         &-text-input--small {
@@ -76,6 +105,10 @@
 
             border-radius: 0.6rem;
             border: 1px solid #d2d1d6;
+
+            @include abstract.screen(xl) {
+                width: 100%;
+            }
         }
 
         &-input-icon {
@@ -86,7 +119,8 @@
             margin-top: 2rem;
 
             &--inline {
-                display: flex;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 3rem;
             }
         }
@@ -143,6 +177,12 @@
             font-size: 1.4rem;
             font-weight: 500;
             line-height: 1.42;
+
+            cursor: pointer;
+
+            @include abstract.screen(xl) {
+                flex: 1;
+            }
         }
 
         &-select + &-select {
@@ -154,6 +194,10 @@
             flex-wrap: wrap;
             column-gap: 2rem;
             row-gap: 1.5rem;
+
+            @include abstract.screen(sm) {
+                gap: 0.9rem;
+            }
         }
 
         &-tag {
@@ -184,5 +228,86 @@
         width: 0.1rem;
         background: #eee;
         margin: 0 3rem;
+
+        @include abstract.screen(xl) {
+            width: initial;
+            height: 0.1rem;
+            margin: 3rem 0;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+
+        margin-top: 3.2rem;
+
+        // Khắc phục bị che mất nội dung trên mobile vì thanh đen đen khi kéo lên
+        @include abstract.screen(sm) {
+            position: sticky;
+            bottom: 0;
+        }
+    }
+
+    &__cancel,
+    &__submit {
+        height: 3.8rem;
+        padding: 0 1rem;
+
+        @include abstract.screen(sm) {
+            flex: 1;
+            height: 4.2rem;
+        }
+    }
+
+    &__cancel {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.46;
+    }
+
+    &__submit {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.42;
+    }
+
+    &__heading,
+    &__content,
+    &__footer {
+        padding: 0 3rem;
+    }
+
+    &__content {
+        max-height: calc(100vh - 35rem);
+        overflow-y: auto;
+        scroll-behavior: contain;
+        padding: 0 3rem;
+
+        @include abstract.screen(xl) {
+            flex-direction: column;
+            max-height: calc(100vh - 20rem);
+        }
+
+        @include abstract.screen(sm) {
+            max-height: calc(100vh - 23rem);
+            padding-bottom: 5rem;
+        }
+    }
+
+    @include abstract.screen(lg) {
+        height: calc(100vh - 6rem);
+        overflow-y: auto;
+        padding-bottom: 0;
+    }
+
+    @include abstract.screen(sm) {
+        position: fixed;
+
+        width: 100vw;
+        height: 100vh;
+
+        inset: 0;
+        border-radius: 0;
     }
 }

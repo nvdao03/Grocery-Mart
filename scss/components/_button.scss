@@ -41,3 +41,56 @@
         margin-top: 1rem;
     }
 }
+
+// Buttons
+// Thiết kế hết 1 loạt button
+.btn {
+    height: 4.6rem;
+
+    padding: 0 2rem;
+    background-color: #f8f8fb;
+    border-radius: 0.6rem;
+
+    font-size: 1.8rem;
+    font-weight: 500;
+    // Loại bỏ bôi đen
+    user-select: none;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+    + .btn {
+        margin-left: 2rem;
+    }
+
+    &--text {
+        color: #9e9da8;
+
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.46;
+        background-color: transparent;
+    }
+
+    &--primary {
+        color: #171c28;
+        background: #ffb700;
+    }
+
+    &--outline {
+        border-radius: 1rem;
+        border: 1px solid #d2d1d6;
+        background: transparent;
+    }
+
+    &--round {
+        border-radius: 999rem;
+        background: #ffb700;
+    }
+
+    &--disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
