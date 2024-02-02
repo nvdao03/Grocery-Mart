@@ -1,3 +1,7 @@
+@use "../abstract";
+
+$error-color: #ed4337;
+
 .form {
     // Tức là nếu trong form -> có trường đang bị lỗi -> thì sẽ không nhấn được nút Sign-In
     &:has(:invalid) &__submit-btn {
@@ -16,8 +20,8 @@
 
     // Khi form-group có lỗi -> và thẻ input ko có placeholder
     &__group:has(:invalid):has(&__input:not(:placeholder-shown)) &__text-input {
-        border-color: red;
-        background: rgba($color: red, $alpha: 0.1);
+        border-color: $error-color;
+        background: rgba($color: $error-color, $alpha: 0.1);
     }
 
     &__text-input {
@@ -42,6 +46,10 @@
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 2.6rem;
+
+        @include abstract.screen(md) {
+            font-size: 1.6rem;
+        }
 
         &::placeholder {
             color: #d2d1d6;
@@ -68,7 +76,7 @@
 
         font-size: 1.4rem;
         font-weight: 500;
-        color: red;
+        color: $error-color;
         text-align: left;
         margin-top: 1rem;
     }
@@ -106,6 +114,10 @@
             font-weight: 500;
             line-height: 2.2rem;
             margin-left: 2.9rem;
+
+            @include abstract.screen(md) {
+                font-size: 1.4rem;
+            }
         }
 
         &::before,

@@ -5,6 +5,12 @@
 
     min-height: 100vh;
 
+    // Nếu mà là trình duyệt trên iphone thì mới áp dụng cái kia vào
+    @supports (-webkit-touch-callout: none) {
+        // Xử lý cho đủ phần chân bị che khuất do trình duyệt safari
+        min-height: -webkit-fill-available;
+    }
+
     &__intro,
     &__content {
         flex: 1;
@@ -44,6 +50,10 @@
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 2.6rem;
+
+            @include abstract.screen(md) {
+                font-size: 1.5rem;
+            }
         }
     }
 
@@ -81,6 +91,10 @@
         line-height: 4.4rem;
         font-weight: 500;
         margin-top: 5rem;
+
+        @include abstract.screen(md) {
+            font-size: 2.2rem;
+        }
     }
 
     &__desc {
@@ -90,11 +104,19 @@
         margin-top: 1rem;
         padding: 0 3rem;
         color: var(--auth-desc-color);
+
+        @include abstract.screen(md) {
+            font-size: 1.4rem;
+        }
     }
 
     &__form {
         width: 100%;
         margin-top: 3rem;
+
+        @include abstract.screen(md) {
+            margin-top: 0;
+        }
     }
 
     &__link {
@@ -102,6 +124,10 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 2.2rem;
+
+        @include abstract.screen(md) {
+            font-size: 1.4rem;
+        }
     }
 
     &__btn-group {
@@ -114,6 +140,10 @@
 
     &__btn {
         width: 100%;
+
+        @include abstract.screen(md) {
+            font-size: 1.8rem;
+        }
     }
 
     &__text {
@@ -127,5 +157,9 @@
         font-size: 1.8rem;
         font-weight: 400;
         line-height: 2.6rem;
+
+        @include abstract.screen(md) {
+            font-size: 1.6rem;
+        }
     }
 }
