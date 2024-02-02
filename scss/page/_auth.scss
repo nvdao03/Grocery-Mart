@@ -24,6 +24,7 @@
         flex-direction: column;
         align-items: center;
         gap: 5rem;
+        background-color: var(--auth-intro-bg);
 
         &-logo {
             position: absolute;
@@ -83,6 +84,14 @@
 
             margin: 0 auto;
             padding: 5rem 0;
+
+            @include abstract.screen(md) {
+                padding: 3.2rem 0;
+            }
+
+            @include abstract.screen(sm) {
+                padding: 1.5rem 0;
+            }
         }
     }
 
@@ -90,10 +99,12 @@
         font-size: 3rem;
         line-height: 4.4rem;
         font-weight: 500;
-        margin-top: 5rem;
+        margin-top: 4rem;
+        color: var(--auth-heading-color);
 
         @include abstract.screen(md) {
             font-size: 2.2rem;
+            margin-top: 2rem;
         }
     }
 
@@ -102,7 +113,7 @@
         font-weight: 500;
         line-height: 2.2rem;
         margin-top: 1rem;
-        padding: 0 3rem;
+        padding: 0 2rem;
         color: var(--auth-desc-color);
 
         @include abstract.screen(md) {
@@ -136,6 +147,11 @@
         gap: 3rem;
 
         margin-top: 5rem;
+
+        @include abstract.screen(md) {
+            margin-top: 4rem;
+            gap: 2rem;
+        }
     }
 
     &__btn {
@@ -151,7 +167,7 @@
         align-items: center;
         gap: 1rem;
 
-        color: #9e9da8;
+        color: var(--auth-intro-text-color);
         margin-top: 10.8rem;
 
         font-size: 1.8rem;
@@ -160,6 +176,10 @@
 
         @include abstract.screen(md) {
             font-size: 1.6rem;
+        }
+
+        @include abstract.screen(sm) {
+            margin-top: 2rem;
         }
     }
 }

@@ -42,6 +42,16 @@ html.dark {
     --filter-form-tag-bg: #171c28;
     --filter-form-arrow-color: var(--dropdown-arrow-color);
 
+    // auth
+    --auth-content-bg: #292e39;
+    --auth-desc-color: #9e9da8;
+    --auth-intro-bg: #171c28;
+    --auth-intro-text-color: #b9babe;
+    --auth-heading-color: #b9babe;
+
+    // Form
+    --form-placeholder-color: #b9babe;
+
     @include abstract.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
     }

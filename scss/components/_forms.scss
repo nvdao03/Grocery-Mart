@@ -16,6 +16,10 @@ $error-color: #ed4337;
             display: flex;
             align-items: center;
         }
+
+        @include abstract.screen(md) {
+            margin-top: 2rem;
+        }
     }
 
     // Khi form-group có lỗi -> và thẻ input ko có placeholder
@@ -52,7 +56,7 @@ $error-color: #ed4337;
         }
 
         &::placeholder {
-            color: #d2d1d6;
+            color: var(--form-placeholder-color);
         }
 
         &-icon {
