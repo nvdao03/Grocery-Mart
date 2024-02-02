@@ -41,6 +41,8 @@
         }
 
         &-img {
+            width: var(--width);
+
             // Responsive để khi nó bị ép lại nó sẽ ăn theo thẻ cha của nó
             max-width: 100%;
         }
@@ -125,6 +127,10 @@
         width: 100%;
         margin-top: 3rem;
 
+        &-fogot {
+            margin-top: 1rem;
+        }
+
         @include abstract.screen(md) {
             margin-top: 0;
         }
@@ -181,5 +187,9 @@
         @include abstract.screen(sm) {
             margin-top: 2rem;
         }
+    }
+
+    &__message {
+        margin-top: 3rem;
     }
 }

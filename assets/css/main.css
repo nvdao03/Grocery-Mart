@@ -2650,6 +2650,19 @@ html.dark {
   top: 0.5rem;
 }
 
+.message {
+  padding: 1.4rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+.message--success {
+  border: 0.1rem solid #46a05c;
+  background: rgba(39, 243, 117, 0.2);
+}
+
 .home__container {
   margin-top: 4rem;
 }
@@ -2718,6 +2731,7 @@ html.dark {
   translate: -50%;
 }
 .auth__intro-img {
+  width: var(--width);
   max-width: 100%;
 }
 .auth__intro-text {
@@ -2796,6 +2810,9 @@ html.dark {
   width: 100%;
   margin-top: 3rem;
 }
+.auth__form-fogot {
+  margin-top: 1rem;
+}
 @media screen and (max-width: 767.98px) {
   .auth__form {
     margin-top: 0;
@@ -2851,6 +2868,9 @@ html.dark {
   .auth__text {
     margin-top: 2rem;
   }
+}
+.auth__message {
+  margin-top: 3rem;
 }
 
 /*# sourceMappingURL=main.css.map */
