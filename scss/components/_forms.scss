@@ -1,4 +1,10 @@
 .form {
+    // Tức là nếu trong form -> có trường đang bị lỗi -> thì sẽ không nhấn được nút Sign-In
+    &:has(:invalid) &__submit-btn {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
     &__group {
         margin-top: 3rem;
 
@@ -6,6 +12,12 @@
             display: flex;
             align-items: center;
         }
+    }
+
+    // Khi form-group có lỗi -> và thẻ input ko có placeholder
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)) &__text-input {
+        border-color: red;
+        background: rgba($color: red, $alpha: 0.1);
     }
 
     &__text-input {
@@ -36,7 +48,42 @@
         }
 
         &-icon {
+            display: inline-block;
+            width: 2.4rem;
+            font-size: 2.4rem;
+
             margin-left: 1.2rem;
+        }
+
+        &-icon-error {
+            display: none;
+            margin-left: 1.2rem;
+
+            animation: shake 0.5s;
+        }
+    }
+
+    &__error {
+        display: none;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: red;
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+        .form__input-icon {
+            display: none;
+        }
+
+        .form__error {
+            display: block;
+        }
+
+        .form__input-icon-error {
+            display: block;
         }
     }
 
@@ -45,15 +92,51 @@
     }
 
     &__checkbox {
+        position: relative;
+
         display: flex;
         align-items: center;
-        gap: 1rem;
+
+        cursor: pointer;
+        user-select: none;
 
         &-lable {
             color: #9e9da8;
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 2.2rem;
+            margin-left: 2.9rem;
+        }
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+        }
+
+        &::before {
+            display: inline-block;
+            width: 1.9rem;
+            height: 1.9rem;
+            border-radius: 0.5rem;
+            border: 0.1rem solid #9e9da8;
+        }
+    }
+
+    &__checkbox:has(:checked) {
+        &::before {
+            background-color: #ffb700;
+            border-color: #ffb700;
+        }
+
+        &::after {
+            width: 1.5rem;
+            height: 0.8rem;
+            border: 2px solid;
+            border-color: transparent transparent #fff #fff;
+            rotate: -45deg;
+            left: 0.2rem;
+            top: 0.5rem;
         }
     }
 }
