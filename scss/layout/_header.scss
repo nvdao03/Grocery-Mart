@@ -180,6 +180,12 @@
 
     @include abstract.screen(md) {
         margin-left: 0px;
+
+        &__sign-up {
+            height: 4rem !important;
+            padding: 0 1.2rem !important;
+            font-size: 1.5rem !important;
+        }
     }
 
     &__group {

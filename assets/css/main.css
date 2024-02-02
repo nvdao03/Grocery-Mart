@@ -1555,6 +1555,11 @@ html.dark {
   .top-act {
     margin-left: 0px;
   }
+  .top-act__sign-up {
+    height: 4rem !important;
+    padding: 0 1.2rem !important;
+    font-size: 1.5rem !important;
+  }
 }
 .top-act__group {
   min-width: 5rem;
@@ -2586,13 +2591,30 @@ html.dark {
 }
 .auth__intro, .auth__content {
   flex: 1;
+  padding: 0 3rem;
 }
 .auth__intro {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 5rem;
+}
+.auth__intro-logo {
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  translate: -50%;
+}
+.auth__intro-next {
+  position: absolute;
+  bottom: 8rem;
+  left: 50%;
+  translate: -50%;
+}
+.auth__intro-img {
+  max-width: 100%;
 }
 .auth__intro-text {
   max-width: 41.2rem;
@@ -2603,6 +2625,18 @@ html.dark {
 }
 .auth__content {
   background-color: var(--auth-content-bg);
+}
+@media screen and (max-width: 767.98px) {
+  .auth__content {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    overflow-y: auto;
+    transition: translate 0.3s;
+  }
+  .auth__content.hide {
+    translate: 100%;
+  }
 }
 .auth__content-inner {
   width: min(46rem, 100%);

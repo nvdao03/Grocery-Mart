@@ -1,3 +1,5 @@
+@use "../abstract";
+
 .auth {
     display: flex;
 
@@ -6,16 +8,34 @@
     &__intro,
     &__content {
         flex: 1;
+        padding: 0 3rem;
     }
 
     &__intro {
+        position: relative;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         gap: 5rem;
 
+        &-logo {
+            position: absolute;
+            top: 8rem;
+            left: 50%;
+            translate: -50%;
+        }
+
+        &-next {
+            position: absolute;
+            bottom: 8rem;
+            left: 50%;
+            translate: -50%;
+        }
+
         &-img {
+            // Responsive để khi nó bị ép lại nó sẽ ăn theo thẻ cha của nó
+            max-width: 100%;
         }
 
         &-text {
@@ -29,6 +49,19 @@
 
     &__content {
         background-color: var(--auth-content-bg);
+
+        @include abstract.screen(md) {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            overflow-y: auto;
+
+            transition: translate 0.3s;
+
+            &.hide {
+                translate: 100%;
+            }
+        }
 
         &-inner {
             width: min(46rem, 100%);
