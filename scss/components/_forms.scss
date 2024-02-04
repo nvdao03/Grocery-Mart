@@ -155,4 +155,79 @@ $error-color: #ed4337;
             top: 0.5rem;
         }
     }
+
+    &__lable {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.45;
+
+        &--small {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__select-wrap {
+        display: flex;
+        align-items: center;
+
+        height: 4.5rem;
+
+        border-radius: 0.6rem;
+        border: 1px solid #d2d1d6;
+    }
+
+    &__select {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        min-width: var(--width, 10.8rem);
+        height: calc(100% - 1rem);
+        padding: 0 1.4rem;
+
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.42;
+
+        cursor: pointer;
+
+        @include abstract.screen(xl) {
+            flex: 1;
+        }
+    }
+
+    &__select + &__select {
+        border-left: 1px solid #d2d1d6;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2rem;
+        row-gap: 1.5rem;
+
+        @include abstract.screen(sm) {
+            gap: 0.9rem;
+        }
+    }
+
+    &__tag {
+        color: #9e9da8;
+        font-size: 1.4rem;
+        font-weight: 500;
+
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.6rem;
+
+        line-height: 1.42;
+        background: var(--form-tag-bg);
+
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--text-color);
+        }
+    }
 }
