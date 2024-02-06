@@ -354,6 +354,12 @@
         border-style: solid;
     }
 
+    &__separate {
+        margin: 2rem 0;
+        height: 0.1rem;
+        background-color: var(--header-act-dropdown-border-color);
+    }
+
     &__row {
         display: flex;
         align-items: center;
