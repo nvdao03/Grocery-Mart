@@ -71,7 +71,7 @@
 
     blockquote {
         padding: 2rem;
-        background-color: #ededed;
+        background-color: var(--quote-bg);
         border-left: 0.3rem solid #78c0a8;
 
         p {
@@ -83,7 +83,7 @@
         height: 0.1rem;
 
         border: none;
-        background: #ededed;
+        background: var(--text-content-hr-bg);
         margin: 4rem 0;
     }
 }

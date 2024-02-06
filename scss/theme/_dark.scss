@@ -69,6 +69,13 @@ html.dark {
     // Search bar
     --search-bar-bg: #171c28;
 
+    // Revieww card
+    --revieww-card-bg: #171c28;
+
+    // Text contents
+    --quote-bg: #171c28;
+    --text-content-hr-bg: #424753;
+
     @include abstract.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
     }

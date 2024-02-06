@@ -72,6 +72,14 @@ html {
     // Revieww card
     --revieww-card-bg: #fafafd;
 
+    @include abstract.screen(md) {
+        --revieww-card-bg: #fff;
+    }
+
+    // Text contents
+    --quote-bg: #ededed;
+    --text-content-hr-bg: #ededed;
+
     // Nếu nó nằm trong phần layout thì phải tạo ra @mixins như này
     @include abstract.screen(lg) {
         --header-bgr-color: #fff;
