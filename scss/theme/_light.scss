@@ -92,6 +92,10 @@ html {
     --checkout-boder-color: #d2d1d6;
     --checkout-gift-shadow: rgba(237, 237, 246, 0.2);
 
+    // Dialog
+    --dialog-bg: #fff;
+    --dialog-shadow: rgba(237, 237, 246, 0.2);
+
     // Nếu nó nằm trong phần layout thì phải tạo ra @mixins như này
     @include abstract.screen(lg) {
         --header-bgr-color: #fff;

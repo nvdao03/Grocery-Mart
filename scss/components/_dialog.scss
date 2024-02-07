@@ -1,0 +1,68 @@
+@use "../abstract";
+
+%fill-screen {
+    position: fixed;
+    inset: 0;
+}
+
+.dialog {
+    @extend %fill-screen;
+
+    // Sử lý có các phần tử cao hơn overlay -> overlay nó sẽ được hiển thị cao nhất
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity, visibility 0.2s;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__overlay {
+        @extend %fill-screen;
+        background: rgba($color: #000000, $alpha: 0.4);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+
+        max-width: min(45rem, 100% - 4rem);
+
+        padding: 3rem;
+        border-radius: 2rem;
+        background-color: var(--dialog-bg);
+        box-shadow: 0 2rem 6rem 1rem var(--dialog-shadow);
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        line-height: 1.5;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+
+    @include abstract.screen(md) {
+        padding: 2rem;
+
+        &__bottom {
+            gap: 2rem;
+        }
+
+        &__btn {
+            flex: 1;
+        }
+    }
+}
