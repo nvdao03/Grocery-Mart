@@ -3687,6 +3687,11 @@ html.dark {
   font-size: 2.2rem;
   font-weight: 700;
 }
+.cart-info__row--block {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+}
 .cart-info__sub-lable {
   font-weight: 400;
 }
@@ -3736,6 +3741,9 @@ html.dark {
 .cart-info__checkbox-input:checked::before {
   content: url("../icons/checkbox-checked.svg");
 }
+.cart-info__check-all {
+  margin: 3rem 0;
+}
 
 .cart-info + .cart-info {
   margin-top: 3rem;
@@ -3749,17 +3757,24 @@ html.dark {
 }
 @media screen and (max-width: 767.98px) {
   .cart-item {
-    padding: 1.6rem;
-    gap: 1.6rem;
+    padding: 1.6rem 0;
   }
   .cart-item:last-child {
     border: none;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .cart-item {
+    padding: 0;
+    gap: 0;
+    padding: 1.6rem 0;
   }
 }
 .cart-item__thumb {
   width: 17.2rem;
   height: 17.2rem;
   object-fit: contain;
+  margin: 0 3rem 0 2rem;
 }
 @media screen and (max-width: 1399.98px) {
   .cart-item__thumb {
@@ -3777,6 +3792,7 @@ html.dark {
   .cart-item__thumb {
     width: 6rem;
     height: 6rem;
+    margin: 0 1.6rem;
   }
 }
 .cart-item__content {
@@ -3798,7 +3814,7 @@ html.dark {
 }
 @media screen and (max-width: 767.98px) {
   .cart-item__content-right {
-    margin-top: 1.6rem;
+    gap: 1.6rem;
   }
 }
 .cart-item__title {
@@ -3817,12 +3833,28 @@ html.dark {
 .cart-item__status {
   color: #67b044;
 }
+.cart-item__control-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+@media screen and (max-width: 1199.98px) {
+  .cart-item__control-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .cart-item__control {
   display: flex;
   align-items: center;
   gap: 2rem;
   min-height: 4.4rem;
   margin-top: auto;
+}
+@media screen and (max-width: 575.98px) {
+  .cart-item__control {
+    gap: 1rem;
+  }
 }
 @media screen and (max-width: 767.98px) {
   .cart-item__control--md-block {
@@ -3868,6 +3900,10 @@ html.dark {
 }
 .cart-item__control-btn:first-child {
   margin-right: 1rem;
+}
+.cart-item__checkout-btn {
+  margin-top: auto;
+  max-width: 20rem;
 }
 
 .gift-item {
