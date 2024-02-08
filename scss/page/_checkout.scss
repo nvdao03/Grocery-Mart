@@ -30,6 +30,19 @@
         padding: 1.6rem;
     }
 
+    &__heading {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 3.4rem;
+    }
+
+    &__sub-heading {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.6rem;
+        margin: 3rem 0;
+    }
+
     &__list {
         margin-top: -3rem;
 
@@ -215,6 +228,10 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 2.2rem;
+
+        &-btn {
+            display: flex;
+        }
     }
 
     &__total-price {
@@ -270,10 +287,142 @@
     }
 
     &__desc {
+        width: min(52rem, 90%);
+
         margin-top: 1rem;
 
         font-size: 1.4rem;
         font-weight: 400;
         line-height: 2rem;
+    }
+}
+
+.user-address {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.6rem;
+
+        @include abstract.screen(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__btn {
+        @include abstract.screen(md) {
+            height: 4.6rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.6rem;
+    }
+
+    &__desc {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+        margin-top: 0.4rem;
+    }
+
+    &__message {
+        margin-top: 3rem;
+        font-weight: 500;
+    }
+
+    &__link {
+        color: #0071dc;
+    }
+}
+
+.address-card {
+    display: flex;
+    margin-top: 3rem;
+    gap: 1.6rem;
+
+    @include abstract.screen(md) {
+        flex-direction: column;
+    }
+
+    &__left {
+        flex: 1;
+
+        display: flex;
+        gap: 1.6rem;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.6rem;
+    }
+
+    &__desc {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+        margin-top: 0.4rem;
+    }
+
+    &__list {
+        display: flex;
+        gap: 3rem;
+
+        margin-top: 2rem;
+
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.42;
+        // inside: tức là nằm bên trong cái li
+        list-style: disc inside;
+
+        @include abstract.screen(sm) {
+            flex-direction: column;
+        }
+
+        &-item {
+            margin-left: 0.8rem;
+        }
+    }
+
+    &__control {
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            color: inherit;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 2.6rem;
+        }
+    }
+
+    &__checkbox {
+        &-input {
+            // Loại bỏ đi cái style mặc định của thẻ ->
+            appearance: none;
+
+            // Nó sẽ biên dịch ra từ file main -> vậy nên đường link từ sẽ link từ vị trí file main
+            &::before {
+                content: url("../icons/checkbox-uncheck.svg");
+            }
+
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
+        }
     }
 }
