@@ -162,6 +162,13 @@ $error-color: #ed4337;
         font-weight: 500;
         line-height: 1.45;
 
+        &--medium {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 2.6rem;
+            margin-bottom: 2rem;
+        }
+
         &--small {
             font-size: 1.4rem;
             margin-bottom: 1rem;

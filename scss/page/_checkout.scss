@@ -34,6 +34,19 @@
         font-size: 2.4rem;
         font-weight: 700;
         line-height: 3.4rem;
+
+        &__lv2 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 3.2rem;
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
     }
 
     &__sub-heading {
@@ -41,6 +54,22 @@
         font-weight: 500;
         line-height: 2.6rem;
         margin: 3rem 0;
+
+        &--lv2 {
+            margin: 0;
+        }
+    }
+
+    &__desc {
+        margin-top: 0.6rem;
+
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+    }
+
+    &__form {
+        margin-bottom: 3rem;
     }
 
     &__list {
@@ -109,6 +138,37 @@
 
     &__next-btn {
         margin-top: 3rem;
+    }
+
+    &__edit-btn {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        color: inherit;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 2.6rem;
+    }
+
+    &__checkbox {
+        &-input {
+            // Loại bỏ đi cái style mặc định của thẻ ->
+            appearance: none;
+
+            // Nó sẽ biên dịch ra từ file main -> vậy nên đường link từ sẽ link từ vị trí file main
+            &::before {
+                content: url("../icons/checkbox-uncheck.svg");
+            }
+
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
+        }
     }
 }
 
@@ -393,36 +453,89 @@
         height: 100%;
         display: flex;
         align-items: flex-end;
+    }
+}
 
-        &-btn {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+.payment-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 
-            color: inherit;
-            font-size: 1.8rem;
-            font-weight: 400;
-            line-height: 2.6rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    background: var(--checkout-payment-item-bg);
+
+    @include abstract.screen(sm) {
+        align-items: flex-start;
+    }
+
+    &__thumb {
+        width: 7rem;
+        height: 5.4rem;
+        object-fit: contain;
+    }
+
+    &__content {
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        @include abstract.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
         }
     }
 
+    &__info {
+        flex: 1;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.6rem;
+    }
+
+    &__desc,
+    &__detail {
+        margin-top: 0.4rem;
+
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+    }
+
+    &__detail {
+        color: #0071dc;
+        text-decoration: underline;
+
+        margin-right: -1rem;
+        margin-top: 0;
+        padding: 1rem;
+    }
+
     &__checkbox {
-        &-input {
-            // Loại bỏ đi cái style mặc định của thẻ ->
-            appearance: none;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 1.4rem;
+    }
 
-            // Nó sẽ biên dịch ra từ file main -> vậy nên đường link từ sẽ link từ vị trí file main
-            &::before {
-                content: url("../icons/checkbox-uncheck.svg");
-            }
+    &__checkbox-input:checked + .payment-item__cost {
+        color: #1a162e;
+    }
 
-            &:not(:checked)::before {
-                filter: var(--icon-color);
-            }
+    &__cost {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.6rem;
+        color: #9e9da8;
+    }
 
-            &:checked::before {
-                content: url("../icons/checkbox-checked.svg");
-            }
-        }
+    &--pointer {
+        cursor: pointer;
     }
 }

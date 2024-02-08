@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -95,8 +95,8 @@
                                             <!-- Card left -->
                                             <div class="address-card__left">
                                                 <div class="address-card__choose">
-                                                    <label class="address-card__checkbox">
-                                                        <input type="checkbox" name="" class="address-card__checkbox-input" checked />
+                                                    <label class="cart-info__checkbox">
+                                                        <input type="radio" name="shipping-address" class="cart-info__checkbox-input" checked />
                                                     </label>
                                                 </div>
                                                 <div class="address-card__info">
@@ -111,7 +111,7 @@
                                             <!-- Card right -->
                                             <div class="address-card__right">
                                                 <div class="address-card__control">
-                                                    <button class="address-card__control-btn">
+                                                    <button class="cart-info__edit-btn">
                                                         <img class="icon" src="./assets/icons/edit.svg" alt="" />
                                                         Edit
                                                     </button>
@@ -124,8 +124,8 @@
                                             <!-- Card left -->
                                             <div class="address-card__left">
                                                 <div class="address-card__choose">
-                                                    <label class="address-card__checkbox">
-                                                        <input type="checkbox" name="" class="address-card__checkbox-input" />
+                                                    <label class="cart-info__checkbox">
+                                                        <input type="radio" name="shipping-address" class="cart-info__checkbox-input" />
                                                     </label>
                                                 </div>
                                                 <div class="address-card__info">
@@ -140,7 +140,7 @@
                                             <!-- Card right -->
                                             <div class="address-card__right">
                                                 <div class="address-card__control">
-                                                    <button class="address-card__control-btn">
+                                                    <button class="cart-info__edit-btn">
                                                         <img class="icon" src="./assets/icons/edit.svg" alt="" />
                                                         Edit
                                                     </button>
@@ -345,7 +345,7 @@
                                     <span>$201.65</span>
                                 </div>
 
-                                <a href="#!" class="cart-info__next-btn btn btn--primary btn--round">Continue to checkout</a>
+                                <a href="./payment.html" class="cart-info__next-btn btn btn--primary btn--round">Continue to checkout</a>
                             </div>
 
                             <div class="cart-info">
@@ -373,14 +373,14 @@
             load("#footer", "./templates/footer.html");
         </script>
 
-        <!-- Dialog / Modal -->
+        <!-- Dialog / Modal: confirm remove shopping cart item -->
         <div id="delete-confirm" class="dialog hide">
             <!-- Content -->
             <div class="dialog__content">
-                <div class="dialog__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <p class="dialog__text">Do you want remove this item from shopping cart?</p>
                 <div class="dialog__bottom">
                     <button class="btn btn--small btn--text dialog__btn js-toggle" toggle-target="#delete-confirm">Cancel</button>
-                    <button class="btn btn--small btn--primary dialog__btn btn--no-margin js-toggle" toggle-target="#delete-confirm">Confirm</button>
+                    <button class="btn btn--small btn--primary btn--danger dialog__btn btn--no-margin js-toggle" toggle-target="#delete-confirm">Delete</button>
                 </div>
             </div>
             <!-- Overlay -->

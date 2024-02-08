@@ -279,14 +279,14 @@
             load("#footer", "./templates/footer.html");
         </script>
 
-        <!-- Dialog / Modal -->
+        <!-- Dialog / Modal: confirm remove shopping cart item -->
         <div id="delete-confirm" class="dialog hide">
             <!-- Content -->
             <div class="dialog__content">
-                <div class="dialog__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <p class="dialog__text">Do you want remove this item from shopping cart?</p>
                 <div class="dialog__bottom">
                     <button class="btn btn--small btn--text dialog__btn js-toggle" toggle-target="#delete-confirm">Cancel</button>
-                    <button class="btn btn--small btn--primary dialog__btn btn--no-margin js-toggle" toggle-target="#delete-confirm">Confirm</button>
+                    <button class="btn btn--small btn--primary btn--danger dialog__btn btn--no-margin js-toggle" toggle-target="#delete-confirm">Delete</button>
                 </div>
             </div>
             <!-- Overlay -->
