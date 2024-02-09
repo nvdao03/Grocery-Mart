@@ -93,6 +93,18 @@ html.dark {
     --dialog-bg: #2f3441;
     --dialog-shadow: rgba(23, 28, 40, 0.4);
 
+    //Profiles
+    --profile-sidebar-bg: #171c28;
+    --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+    --profile-sidebar-link-hover: #2f3441;
+
+    // Account iinfo
+    --account-info-bg: #292e39;
+    --account-info-icon-bg: #171c28;
+
+    // Separate
+    --separate-color: #d2d1d6;
+
     @include abstract.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
     }

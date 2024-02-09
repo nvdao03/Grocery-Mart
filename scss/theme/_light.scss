@@ -97,6 +97,15 @@ html {
     --dialog-bg: #fff;
     --dialog-shadow: rgba(237, 237, 246, 0.2);
 
+    //Profiles
+    --profile-sidebar-bg: #fff;
+    --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+    --profile-sidebar-link-hover: #ebebeb;
+
+    // Account iinfo
+    --account-info-bg: #f6f6f6;
+    --account-info-icon-bg: #fff;
+
     // Nếu nó nằm trong phần layout thì phải tạo ra @mixins như này
     @include abstract.screen(lg) {
         --header-bgr-color: #fff;

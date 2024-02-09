@@ -88,3 +88,9 @@ b,
 strong {
     font-weight: 600;
 }
+
+.separate {
+    margin: var(--margin);
+    height: 0.1rem;
+    background-color: var(--separate-color);
+}
