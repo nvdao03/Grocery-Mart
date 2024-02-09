@@ -9,8 +9,18 @@ $error-color: #ed4337;
         pointer-events: none;
     }
 
+    &__row {
+        display: flex;
+        gap: 3rem;
+
+        @include abstract.screen(sm) {
+            flex-direction: column;
+        }
+    }
+
     &__group {
         margin-top: 3rem;
+        flex: 1;
 
         &--inline {
             display: flex;

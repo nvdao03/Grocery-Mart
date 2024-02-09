@@ -1,0 +1,14 @@
+.form-card {
+    &__lable {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.6rem;
+        margin-bottom: 2rem;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
