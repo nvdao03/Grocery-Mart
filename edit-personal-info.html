@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Add new card | Grocery Mart</title>
+        <title>Edit Personal Info | Grocery Mart</title>
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
@@ -57,7 +57,7 @@
                                     <h3 class="profile-menu__title">Manage Account</h3>
                                     <ul class="profile-menu__list">
                                         <li>
-                                            <a href="./edit-personal-info.html" class="profile-menu__link">
+                                            <a href="#!" class="profile-menu__link">
                                                 <span class="profile-menu__icon">
                                                     <img src="./assets/icons/profile.svg" alt="" class="icon" />
                                                 </span>
@@ -162,25 +162,25 @@
                                             <a href="./profile.html">
                                                 <img src="./assets/icons/arrow-left.svg" alt="" class="icon cart-info__back-arrow" />
                                             </a>
-                                            Add credit or debit card
+                                            Personal info
                                         </h2>
 
                                         <form action="" class="form form-card">
                                             <!-- Form row 1 -->
                                             <div class="form__row">
                                                 <div class="form__group">
-                                                    <lable for="#first-name" class="form__lable form-card__lable">First Name</lable>
+                                                    <lable for="#first-name" class="form__lable form-card__lable">Full name</lable>
                                                     <div class="form__text-input">
-                                                        <input type="email" name="" id="first-name" class="form__input" placeholder="First name" required autofocus />
+                                                        <input type="email" name="" id="first-name" class="form__input" placeholder="Full Name" required autofocus />
                                                         <img src="./assets/icons/warning.svg" alt="" class="form__input-icon form__input-icon-error" />
                                                     </div>
                                                     <p class="form__error">Email chưa đúng định dạng</p>
                                                 </div>
 
                                                 <div class="form__group">
-                                                    <lable for="#last-name" class="form__lable form-card__lable">Last Name</lable>
+                                                    <lable for="#last-name" class="form__lable form-card__lable">Email address</lable>
                                                     <div class="form__text-input">
-                                                        <input type="email" name="" id="last-name" class="form__input" placeholder="First name" required />
+                                                        <input type="email" name="" id="last-name" class="form__input" placeholder="admin@uihut.com" required />
                                                         <img src="./assets/icons/warning.svg" alt="" class="form__input-icon form__input-icon-error" />
                                                     </div>
                                                     <p class="form__error">Email chưa đúng định dạng</p>
@@ -190,52 +190,22 @@
                                             <!-- Form row 2 -->
                                             <div class="form__row">
                                                 <div class="form__group">
-                                                    <lable for="#cart-info" class="form__lable form-card__lable">Card Information</lable>
+                                                    <lable for="#cart-info" class="form__lable form-card__lable">Phone number</lable>
                                                     <div class="form__text-input">
-                                                        <input type="email" name="" id="cart-info" class="form__input" placeholder="Card Information" required />
+                                                        <input type="email" name="" id="cart-info" class="form__input" placeholder="+008 01234 56789" required />
                                                         <img src="./assets/icons/warning.svg" alt="" class="form__input-icon form__input-icon-error" />
                                                     </div>
                                                     <p class="form__error">Email chưa đúng định dạng</p>
                                                 </div>
 
                                                 <div class="form__group">
-                                                    <lable for="#expiration" class="form__lable form-card__lable">Expiration Date</lable>
+                                                    <lable for="#expiration" class="form__lable form-card__lable">Password</lable>
                                                     <div class="form__text-input">
-                                                        <input type="text" name="" id="expiration" class="form__input" placeholder="First name" required />
+                                                        <input type="text" name="" id="expiration" class="form__input" placeholder="•••••••••" required />
                                                         <img src="./assets/icons/warning.svg" alt="" class="form__input-icon form__input-icon-error" />
                                                     </div>
                                                     <p class="form__error">Email chưa đúng định dạng</p>
                                                 </div>
-                                            </div>
-
-                                            <!-- Form row 3 -->
-                                            <div class="form__row">
-                                                <div class="form__group">
-                                                    <lable for="#CVV" class="form__lable form-card__lable">CVV</lable>
-                                                    <div class="form__text-input">
-                                                        <input type="email" name="" id="CVV" class="form__input" placeholder="CVV" required />
-                                                        <img src="./assets/icons/warning.svg" alt="" class="form__input-icon form__input-icon-error" />
-                                                    </div>
-                                                    <p class="form__error">Email chưa đúng định dạng</p>
-                                                </div>
-
-                                                <div class="form__group">
-                                                    <lable for="#phone-number" class="form__lable form-card__lable">Phone Number</lable>
-                                                    <div class="form__text-input">
-                                                        <input type="text" name="" id="phone-number" class="form__input" placeholder="Phone Number" required />
-                                                        <img src="./assets/icons/warning.svg" alt="" class="form__input-icon form__input-icon-error" />
-                                                    </div>
-                                                    <p class="form__error">Email chưa đúng định dạng</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="form__group">
-                                                <lable for="#set-default-card" class="form__lable form-card__lable">Card Preferences</lable>
-                                                <lable for="#set-default-card" class="form__checkbox">
-                                                    <input type="checkbox" name="" id="set-default-card" class="form__checkbox-input" hidden />
-                                                    <label for="#set-default-card" class="form__checkbox-lable">Set as default card</label>
-                                                </lable>
-                                                <p class="form__error">Email chưa đúng định dạng</p>
                                             </div>
 
                                             <div class="form-card__bottom">
