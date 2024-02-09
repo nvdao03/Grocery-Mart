@@ -1738,16 +1738,28 @@ html.dark {
   background-color: var(--top-act-group-separate);
 }
 .top-act__user {
+  position: relative;
   width: 5rem;
   height: 5rem;
   border-radius: 0.8rem;
   box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
   cursor: pointer;
 }
+.top-act__user:hover .act-dropdown {
+  display: block;
+}
 .top-act__avatar {
   width: 100%;
   border-radius: 0.8rem;
   box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+.top-act__dropdown {
+  width: min(30rem, 100vw) !important;
+  right: -1.5rem !important;
+}
+.top-act__dropdown__arrow {
+  right: 1rem !important;
 }
 
 .nav-btn {
@@ -1881,6 +1893,45 @@ html.dark {
   font-weight: 500;
   line-height: 2.2rem;
   margin-top: 0.6rem;
+}
+
+.user-menu__top {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.user-menu__avatar {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+}
+.user-menu__name {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+.user-menu__list {
+  margin-top: 3rem;
+}
+.user-menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 1.2rem 0;
+}
+.user-menu__link:hover {
+  text-decoration: underline;
+}
+.user-menu__separate {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 0.1rem solid #d2d1d6;
+}
+.user-menu__icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
 }
 
 .footer {

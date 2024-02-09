@@ -261,17 +261,33 @@
     }
 
     &__user {
+        position: relative;
+
         width: 5rem;
         height: 5rem;
         border-radius: 0.8rem;
         box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
         cursor: pointer;
+
+        &:hover .act-dropdown {
+            display: block;
+        }
     }
 
     &__avatar {
         width: 100%;
         border-radius: 0.8rem;
         box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+    }
+
+    &__dropdown {
+        width: min(30rem, 100vw) !important;
+        right: -1.5rem !important;
+    }
+
+    &__dropdown__arrow {
+        right: 1rem !important;
     }
 }
 
@@ -434,5 +450,53 @@
         font-weight: 500;
         line-height: 2.2rem;
         margin-top: 0.6rem;
+    }
+}
+
+.user-menu {
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__avatar {
+        width: 6rem;
+        height: 6rem;
+        object-fit: cover;
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    &__list {
+        margin-top: 3rem;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        padding: 1.2rem 0;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__separate {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 0.1rem solid #d2d1d6;
+    }
+
+    &__icon {
+        display: block;
+        width: 2rem;
+        height: 2rem;
     }
 }
